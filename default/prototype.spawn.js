@@ -6,7 +6,7 @@ module.exports = function () {
 
         let numberOfParts = Math.min(Math.floor(energy / 200), maxTier);
         let bodyForRole = populationConfig[role].bodyTiers[numberOfParts];
-        console.log(bodyForRole);
+        console.log(bodyForRole.body, bodyForRole.cost);
 
         let body = [];
         for (let i = 0; i < numberOfParts; i++) {
