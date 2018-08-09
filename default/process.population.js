@@ -7,37 +7,29 @@ const ROLE_UPGRADER = constants.ROLE_UPGRADER();
 const ROLE_PATHFINDER = constants.ROLE_PATHFINDER();
 const ROLE_REPAIRER = constants.ROLE_REPAIRER();
 
-/*
-const HARVESTER_ENERGY_COST = 200 * constants.getMaxSize(ROLE_HARVESTER);
-const BUILDER_ENERGY_COST = 200 * constants.getMaxSize(ROLE_BUILDER);
-const UPGRADER_ENERGY_COST = 200 * constants.getMaxSize(ROLE_UPGRADER);
-const PATHFINDER_ENERGY_COST = 200 * constants.getMaxSize(ROLE_PATHFINDER);
-const REPAIRER_ENERGY_COST = 200 * constants.getMaxSize(ROLE_REPAIRER);
-*/
-
-let energyCapacity = Game.spawns.Spawn1.room.energyCapacityAvailable;
-let energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
-
-let minimumHarvesterCount = populationConfig.harvester.count;
-let minimumBuilderCount = populationConfig.builder.count;
-let minimumUpgraderCount = populationConfig.upgrader.count;
-let minimumPathFinderCount = populationConfig.pathfinder.count;
-let minimumRepairerCount = populationConfig.repairer.count;
-
 let populationProcessor = {
     run: function () {
         this.cleanDeadCreeps();
         this.managePopulation();
     },
 
-    spawnCreepIfPossible: function () {
+    managePopulation: function() {
+        let name = undefined;
+        let energyCapacity = Game.spawns.Spawn1.room.energyCapacityAvailable;
+        let energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
+
+        let minimumHarvesterCount = populationConfig.harvester.count;
+        let minimumBuilderCount = populationConfig.builder.count;
+        let minimumUpgraderCount = populationConfig.upgrader.count;
+        let minimumPathFinderCount = populationConfig.pathfinder.count;
+        let minimumRepairerCount = populationConfig.repairer.count;
+
         let livingHarvesters = this.getLivingCreepCount(ROLE_HARVESTER);
         let livingUpgraders = this.getLivingCreepCount(ROLE_UPGRADER);
         let livingBuilders = this.getLivingCreepCount(ROLE_BUILDER);
         let livingPathFinders = this.getLivingCreepCount(ROLE_PATHFINDER);
         let livingRepairers = this.getLivingCreepCount(ROLE_REPAIRER);
 
-        let name = undefined;
         let roleSpawned = undefined;
         if (livingHarvesters < minimumHarvesterCount) {
             roleSpawned = ROLE_HARVESTER;
@@ -61,12 +53,6 @@ let populationProcessor = {
             // roleSpawned = ROLE_BUILDER;
             // name = this.spawnCreep(roleSpawned, energyCapacity);
         }
-        return {name, roleSpawned};
-    },
-
-    managePopulation: function () {
-        let {name, roleSpawned} = this.spawnCreepIfPossible();
-
         if (constants.isShowPopulationEnabled()) {
             console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters |',
                 livingUpgraders, '/', minimumUpgraderCount, 'upgraders |',
