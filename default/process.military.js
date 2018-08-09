@@ -2,10 +2,6 @@ let constants = require('config');
 let populationConfig = require('setup.population');
 
 const HARVESTER = constants.ROLE_HARVESTER();
-const BUILDER = constants.ROLE_BUILDER();
-const UPGRADER = constants.ROLE_UPGRADER();
-const PATHFINDER = constants.ROLE_PATHFINDER();
-const REPAIRER = constants.ROLE_REPAIRER();
 
 let populationProcessor = {
     run: function () {
@@ -20,22 +16,10 @@ let populationProcessor = {
 
 
         let harvester = populationConfig.harvester;
-        let builder = populationConfig.builder;
-        let upgrader = populationConfig.upgrader;
-        let pathfinder = populationConfig.pathfinder;
-        let repairer = populationConfig.repairer;
 
         let minimumHarvesterCount = harvester.count;
-        let minimumBuilderCount = builder.count;
-        let minimumUpgraderCount = upgrader.count;
-        let minimumPathFinderCount = pathfinder.count;
-        let minimumRepairerCount = repairer.count;
 
         let livingHarvesters = this.getLivingCreepCount(HARVESTER);
-        let livingUpgraders = this.getLivingCreepCount(UPGRADER);
-        let livingBuilders = this.getLivingCreepCount(BUILDER);
-        let livingPathFinders = this.getLivingCreepCount(PATHFINDER);
-        let livingRepairers = this.getLivingCreepCount(REPAIRER);
 
         let roleSpawned = undefined;
 
@@ -54,48 +38,16 @@ let populationProcessor = {
             // }
             // }
 
-        } else if (livingUpgraders < minimumUpgraderCount) {
-            roleSpawned = UPGRADER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
-            if (name === ERR_NOT_ENOUGH_ENERGY) {
-                if (livingBuilders < 1) {
-                    roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, 600);
-                }
-            }
-        } else if (livingRepairers < minimumRepairerCount) {
-            roleSpawned = REPAIRER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
-            if (name === ERR_NOT_ENOUGH_ENERGY) {
-                if (livingBuilders < 2) {
-                    roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, 400);
-                } else if (livingRepairers < 2) {
-                    roleSpawned = REPAIRER;
-                    name = this.spawnCreep(roleSpawned, 600);
-                }
-            }
-        } else if (livingPathFinders < minimumPathFinderCount) {
-            roleSpawned = PATHFINDER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
-        } else if (livingBuilders < minimumBuilderCount) {
-            roleSpawned = BUILDER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
-            if (name === ERR_NOT_ENOUGH_ENERGY) {
-                if (livingBuilders < 2) {
-                    roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, 400);
-                }
-            }
         } else {
             //todo figure out which creep would be most useful to build
         }
         if (constants.isShowPopulationEnabled()) {
             console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', harvester.tiers.length - 1, ') |',
-                livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', upgrader.tiers.length - 1, ') |',
-                livingRepairers, '/', minimumRepairerCount, 'repairers(', repairer.tiers.length - 1, ') |',
-                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') |',
-                livingBuilders, '/', minimumBuilderCount, 'builders(', builder.tiers.length - 1, ')');
+                // livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', upgrader.tiers.length - 1, ') |',
+                // livingRepairers, '/', minimumRepairerCount, 'repairers(', repairer.tiers.length - 1, ') |',
+                // livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') |',
+                // livingBuilders, '/', minimumBuilderCount, 'builders(', builder.tiers.length - 1, ')'
+            );
         }
         if (constants.isShowResourcesEnabled()) {
             console.log(energyAvailable, '/', energyCapacity, 'energy')

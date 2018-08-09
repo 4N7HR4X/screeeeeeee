@@ -18,7 +18,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 2,
+        count: 3,
         priority: 10,
         tags: ['logistics', 'harvester']
     },
@@ -41,7 +41,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 2,
+        count: 3,
         priority: 6,
         tags: ['logistics', 'builder']
     },
@@ -64,7 +64,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3,
+        count: 4,
         priority: 8,
         tags: ['logistics', 'upgrader']
     },
