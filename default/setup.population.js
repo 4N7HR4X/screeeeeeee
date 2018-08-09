@@ -19,7 +19,8 @@ module.exports = {
             }
         ],
         count: 3,
-        priority: 10
+        priority: 10,
+        tags: ['logistics', 'harvester']
     },
     'builder': {
         tiers: [
@@ -41,7 +42,8 @@ module.exports = {
             }
         ],
         count: 3,
-        priority: 6
+        priority: 6,
+        tags: ['logistics', 'builder']
     },
     'upgrader': {
         tiers: [
@@ -63,7 +65,8 @@ module.exports = {
             }
         ],
         count: 3,
-        priority: 8
+        priority: 8,
+        tags: ['logistics', 'upgrader']
     },
     'pathfinder': {
         tiers: [
@@ -85,7 +88,8 @@ module.exports = {
             }*/
         ],
         count: 0,
-        priority: 0
+        priority: 0,
+        tags: ['logistics', 'pathfinder']
     },
     'repairer': {
         tiers: [
@@ -107,7 +111,8 @@ module.exports = {
             }
         ],
         count: 3,
-        priority: 3
+        priority: 3,
+        tags: ['logistics', 'repairer']
     },
     getTierToSpawn: function (role, energy) {
         let returnedTier = null;
