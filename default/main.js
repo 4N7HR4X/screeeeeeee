@@ -3,7 +3,7 @@ require('prototype.spawn')();
 let populationControl = require('process.population');
 let colonyActionControl = require('process.colony_action');
 
-let doSuicideProtocol = true;
+let doSuicideProtocol = false;
 
 module.exports.loop = function () {
     if (doSuicideProtocol) {
