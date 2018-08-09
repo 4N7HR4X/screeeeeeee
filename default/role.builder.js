@@ -5,6 +5,8 @@ const upgraderRole = require('role.upgrader');
 const PATH_STYLE_TO_WORK = constants.PATH_STYLE_TO_WORK();
 
 let roleBuilder = {
+    role: 'builder',
+
     build: function (creep) {
         let constructionSite = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
         if (constructionSite == null) {

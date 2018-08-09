@@ -1,17 +1,14 @@
 const harvesterRole = require('role.harvester');
-const upgraderRole = require('role.upgrader');
 const builderRole = require('role.builder');
+const upgraderRole = require('role.upgrader');
 const pathfinderRole = require('role.pathfinder');
-
 const repairerRole = require('role.repairer');
 
-const constants = require('config');
-
-const ROLE_HARVESTER = constants.ROLE_HARVESTER();
-const ROLE_BUILDER = constants.ROLE_BUILDER();
-const ROLE_UPGRADER = constants.ROLE_UPGRADER();
-const ROLE_PATHFINDER = constants.ROLE_PATHFINDER();
-const ROLE_REPAIRER = constants.ROLE_REPAIRER();
+const HARVESTER = harvesterRole.role;
+const BUILDER = builderRole.role;
+const UPGRADER = upgraderRole.role;
+const PATHFINDER = pathfinderRole.role;
+const REPAIRER = repairerRole.role;
 
 let colony = {
     run: function () {
@@ -22,21 +19,23 @@ let colony = {
     },
     performCreepAction: function (creep) {
         switch (creep.memory.role) {
-            case ROLE_HARVESTER:
+            case HARVESTER:
                 harvesterRole.performAction(creep);
                 break;
-            case ROLE_UPGRADER:
-                upgraderRole.performAction(creep);
-                break;
-            case ROLE_BUILDER:
+            case BUILDER:
                 builderRole.performAction(creep);
                 break;
-            case ROLE_PATHFINDER:
+            case UPGRADER:
+                upgraderRole.performAction(creep);
+                break;
+            case PATHFINDER:
                 pathfinderRole.performAction(creep);
                 break;
-            case ROLE_REPAIRER:
+            case REPAIRER:
                 repairerRole.performAction(creep);
                 break;
+            default:
+                upgraderRole.performAction(creep);
         }
     }
 };

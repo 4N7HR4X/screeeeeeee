@@ -4,6 +4,7 @@ const PATH_STYLE_TO_COLLECT = constants.PATH_STYLE_TO_COLLECT();
 const PATH_STYLE_TO_WORK = constants.PATH_STYLE_TO_WORK();
 
 const base = {
+    role:'default',
     extractResource: function (creep) {
         let source = creep.pos.findClosestByPath(FIND_SOURCES);
         // let sources = creep.pos.findInRange(FIND_SOURCES, 10);

@@ -4,6 +4,7 @@ const baseRole = require('role.base');
 const PATH_STYLE_TO_WORK = constants.PATH_STYLE_TO_WORK();
 
 let roleUpgrader = {
+    role: 'upgrader',
 
     /** @param {Creep} creep **/
     performAction: function (creep) {
