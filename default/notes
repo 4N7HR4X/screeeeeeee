@@ -25,4 +25,33 @@ Objectives:
 
 test for new simplified spawn rule.
 spawn whatever size you are currently able to.
-in the section after all minimums have been satisfied, determine most needed creep and spawn one of maximum current energy.
+in the section after all minimums have been satisfied, determine most needed
+creep and spawn one of maximum current energy.
+
+find out how to use links. make creeps that grab energy from source and send
+through link to control room (MINER). then make creeps that sit next to link and
+move energy from link to control (TECHNICIAN).
+
+Part of this will involve starting each new creep type from spawn. current thinking is to
+make the miner find all Link objects and go to the one closest to an energy source.
+(maybe make a named one or something specific to the object to ensure it is the one
+that links to the control room thingy)
+
+Once target link is determined, collect energy and drop into link (send to other side
+or whatever the mechanism is) then collect more. repeat forever.
+
+The same goes for the technician creep. Approach the Link closest to the Control thingy.
+If you have energy in your pocket, upgrade control. if not, take some from the link and upgrade. repeat.
+
+strategy to recover if no miners exist (for technicians)
+If no energy is present in the Link, start a counter. if no energy appears in the Link after the counter
+has reached some maximum (and there are no miners), the technician immediately changes its
+role to miner. it then determines the Link that is linked to the one currently posted
+at and will approach it.
+
+
+tag harvester as miner.
+tag upgrader as miner and upgrader as technician.
+
+
+make military.
