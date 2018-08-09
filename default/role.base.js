@@ -5,9 +5,10 @@ const PATH_STYLE_TO_WORK = constants.PATH_STYLE_TO_WORK();
 
 const base = {
     extractResource: function (creep) {
-        // let source = creep.pos.findClosestByPath(FIND_SOURCES);
-        let sources = creep.pos.findInRange(FIND_SOURCES, 10);
-        let source = sources[0];
+        let source = creep.pos.findClosestByPath(FIND_SOURCES);
+        // let sources = creep.pos.findInRange(FIND_SOURCES, 10);
+        // let source = sources[0];
+        console.log(source);
         if (creep.harvest(source) === ERR_NOT_IN_RANGE) {
             creep.moveTo(source, PATH_STYLE_TO_COLLECT);
         } else {
