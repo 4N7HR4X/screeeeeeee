@@ -18,7 +18,8 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3
+        count: 3,
+        priority: 10
     },
     'builder': {
         tiers: [
@@ -39,7 +40,8 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3
+        count: 3,
+        priority: 6
     },
     'upgrader': {
         tiers: [
@@ -60,7 +62,8 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3
+        count: 3,
+        priority: 8
     },
     'pathfinder': {
         tiers: [
@@ -81,7 +84,8 @@ module.exports = {
                 cost: 800
             }*/
         ],
-        count: 0
+        count: 0,
+        priority: 0
     },
     'repairer': {
         tiers: [
@@ -102,7 +106,8 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3
+        count: 3,
+        priority: 3
     },
     getTierToSpawn: function (role, energy) {
         let returnedTier = null;

@@ -13,6 +13,28 @@ let populationProcessor = {
         this.managePopulation();
     },
 
+    /**
+     * CreepSpawner pre_alpha rev0 (09/08/2018)
+     *
+     * Objectives:
+     * > 0) If there are no harvesters, spawn biggest harvester we can afford
+     * > 1) If there is at least as many as the minimum of any given role of creep, spawn a new instance of
+     *    whichever role's current count is closest to its minimum (as a percentage of population)
+     *    (we value harvesters more when their population is low)
+     *    An example to consider:
+     *      // minimum harvester population to maintain
+     *      let minHarvester = 3;
+     *      // A zero result means we have the minimum number of harvesters required.
+     *      // The result of this will be used along with current population and minimum count to rank
+     *      // all roles in order of most important to spawn next.
+     *      let distanceFromMinimum = livingHarvesters - minHarvesters;
+     *
+     *      let harvesterRank = role.priority - (distanceFromMinimum * livingHarvesters / minHarvesters)
+     *
+     *      // Highest priority wins!
+     *
+     *
+     */
     managePopulation: function () {
         let name = undefined;
         let energyCapacity = Game.spawns.Spawn1.room.energyCapacityAvailable;
