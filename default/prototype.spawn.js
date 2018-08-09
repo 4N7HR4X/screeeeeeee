@@ -5,7 +5,7 @@ module.exports = function () {
         let numberOfParts = Math.min(Math.floor(energy / 200), config.getMaxSize(role));
 
         let b = require('setup.population');
-        let bd = b[role];
+        let bd = b[role].tiers[0];
         console.log(bd);
 
         let body = [];
