@@ -13,16 +13,23 @@ let populationProcessor = {
         this.managePopulation();
     },
 
-    managePopulation: function() {
+    managePopulation: function () {
         let name = undefined;
         let energyCapacity = Game.spawns.Spawn1.room.energyCapacityAvailable;
         let energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
-        let minimumHarvesterCount = populationConfig.harvester.count;
-        let minimumBuilderCount = populationConfig.builder.count;
-        let minimumUpgraderCount = populationConfig.upgrader.count;
-        let minimumPathFinderCount = populationConfig.pathfinder.count;
-        let minimumRepairerCount = populationConfig.repairer.count;
+
+        let harvester = populationConfig.harvester;
+        let builder = populationConfig.builder;
+        let upgrader = populationConfig.upgrader;
+        let pathfinder = populationConfig.pathfinder;
+        let repairer = populationConfig.repairer;
+
+        let minimumHarvesterCount = harvester.count;
+        let minimumBuilderCount = builder.count;
+        let minimumUpgraderCount = upgrader.count;
+        let minimumPathFinderCount = pathfinder.count;
+        let minimumRepairerCount = repairer.count;
 
         let livingHarvesters = this.getLivingCreepCount(ROLE_HARVESTER);
         let livingUpgraders = this.getLivingCreepCount(ROLE_UPGRADER);
@@ -54,11 +61,11 @@ let populationProcessor = {
             // name = this.spawnCreep(roleSpawned, energyCapacity);
         }
         if (constants.isShowPopulationEnabled()) {
-            console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters |',
-                livingUpgraders, '/', minimumUpgraderCount, 'upgraders |',
-                livingRepairers, '/', minimumRepairerCount, 'repairers |',
-                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders |',
-                livingBuilders, '/', minimumBuilderCount, 'builders');
+            console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', harvester.tiers.length - 1, ') |',
+                livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', builder.tiers.length - 1, ') |',
+                livingRepairers, '/', minimumRepairerCount, 'repairers(', upgrader.tiers.length - 1, ') |',
+                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') |',
+                livingBuilders, '/', minimumBuilderCount, 'builders(', repairer.tiers.length - 1, ')');
         }
         if (constants.isShowResourcesEnabled()) {
             console.log(energyAvailable, '/', energyCapacity, 'energy')
