@@ -103,7 +103,8 @@ module.exports = {
             }
         ],
         count: 3
-    }, getTierToSpawn: function (role, energy) {
+    },
+    getTierToSpawn: function (role, energy) {
         let returnedTier = null;
         let tiers = this[role].tiers;
         let maxTier = tiers.length - 1;
@@ -113,15 +114,12 @@ module.exports = {
             } else {
                 break;
             }
-        }/*
-        for (let tier in this[role].tiers) {
-            console.log(tier);
-            if (energy >= tier.cost) {
-                returnedTier = tier;
-            } else {
-                break;
-            }
-        }*/
+        }
         return returnedTier;
+    },
+    calculateBodyCost: function (body) {
+        return body.reduce(function (cost, part) {
+            return cost + BODYPART_COST[part];
+        }, 0);
     }
 };

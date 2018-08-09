@@ -1,4 +1,4 @@
-const DEBUG = true;
+const DEBUG = false;
 const SHOW_POPULATION = true;
 const SHOW_RESOURCES = true;
 const SHOW_ROLES = true;

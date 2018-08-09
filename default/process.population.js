@@ -55,8 +55,8 @@ let populationProcessor = {
             roleSpawned = ROLE_BUILDER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else {
-            // roleSpawned = ROLE_BUILDER;
             roleSpawned = undefined;
+            // roleSpawned = ROLE_BUILDER;
             // name = this.spawnCreep(roleSpawned, energyCapacity);
         }
         if (constants.isShowPopulationEnabled()) {
