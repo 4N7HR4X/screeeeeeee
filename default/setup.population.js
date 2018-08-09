@@ -1,39 +1,88 @@
-const creeps = {
+module.exports = {
     'harvester': {
-        tiers: [
-            [WORK, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
+        bodyTiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            },
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            }
         ],
         count: 3
     },
     'builder': {
-        tiers: [
-            [WORK, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
+        bodyTiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            },
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            }
         ],
         count: 3
     },
     'upgrader': {
-        tiers: [
-            [WORK, MOVE, MOVE, CARRY],
-            [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY]
+        bodyTiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            },
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            }
         ],
         count: 3
     },
     'pathfinder': {
-        tiers: [
-            [WORK, MOVE, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
-        ],
-        count: 0
-    },
-    'repairer': {
-        tiers: [
-            [WORK, MOVE, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
+        bodyTiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            },
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            }
         ],
         count: 3
-    }
+    },
+    'repairer': {
+        bodyTiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            },
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            }
+        ],
+        count: 3
+    },
+    maxTier: 2
 };
-
-module.exports = creeps;

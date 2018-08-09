@@ -1,12 +1,12 @@
 
 module.exports = function () {
-    let config = require('config');
     StructureSpawn.prototype.createCustomCreep = function (role, energy) {
-        let numberOfParts = Math.min(Math.floor(energy / 200), config.getMaxSize(role));
+        let populationConfig = require('setup.population');
+        let maxTier = populationConfig.maxTier;
 
-        let b = require('setup.population');
-        let bd = b[role].tiers[0];
-        console.log(bd);
+        let numberOfParts = Math.min(Math.floor(energy / 200), maxTier);
+        let bodyForRole = populationConfig[role].bodyTiers[numberOfParts];
+        console.log(bodyForRole);
 
         let body = [];
         for (let i = 0; i < numberOfParts; i++) {
