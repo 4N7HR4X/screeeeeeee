@@ -12,6 +12,10 @@ module.exports = {
             {
                 body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
                 cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
             }
         ],
         count: 3
@@ -29,6 +33,10 @@ module.exports = {
             {
                 body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
                 cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
             }
         ],
         count: 3
@@ -46,6 +54,10 @@ module.exports = {
             {
                 body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
                 cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
             }
         ],
         count: 3
@@ -63,6 +75,10 @@ module.exports = {
             {
                 body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
                 cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
             }
         ],
         count: 3
@@ -80,9 +96,13 @@ module.exports = {
             {
                 body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
                 cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
             }
         ],
         count: 3
     },
-    maxTier: 2
+    maxTier: 3
 };
