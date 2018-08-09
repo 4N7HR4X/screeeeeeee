@@ -70,6 +70,9 @@ let populationProcessor = {
                 if (livingBuilders < 1) {
                     roleSpawned = BUILDER;
                     name = this.spawnCreep(roleSpawned, 400);
+                } else if (livingRepairers < 2) {
+                    roleSpawned = REPAIRER;
+                    name = this.spawnCreep(roleSpawned, 600);
                 }
             }
         } else if (livingPathFinders < minimumPathFinderCount) {
