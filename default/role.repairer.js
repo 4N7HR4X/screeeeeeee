@@ -19,7 +19,7 @@ let roleRepairer = {
                 // creep.say('⚙️');
             } else {
                 if (constants.isShowRolesEnabled()) {
-                    creep.say('🛠️');
+                    creep.say('R️');
                 }
             }
         } else {

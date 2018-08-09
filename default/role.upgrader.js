@@ -22,7 +22,7 @@ let roleUpgrader = {
                 creep.moveTo(controller, PATH_STYLE_TO_WORK);
             } else {
                 if (constants.isShowRolesEnabled()) {
-                    creep.say('⚡');
+                    creep.say('U');
                 }
             }
         } else {

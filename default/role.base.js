@@ -14,7 +14,7 @@ const base = {
             creep.moveTo(source, PATH_STYLE_TO_COLLECT);
         } else {
             if (constants.isShowRolesEnabled()) {
-                creep.say('⛏️');
+                creep.say('H');
             }
         }
     },
@@ -31,7 +31,7 @@ const base = {
             creep.moveTo(target, PATH_STYLE_TO_WORK);
         } else {
             if (constants.isShowRolesEnabled()) {
-                creep.say('🗑️');
+                creep.say('D');
             }
         }
     },

@@ -17,7 +17,7 @@ let roleBuilder = {
                 console.log('kwaal')
             } else {
                 if (constants.isShowRolesEnabled()) {
-                    creep.say('🚧');
+                    creep.say('B');
                 }
             }
         }
