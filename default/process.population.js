@@ -60,11 +60,11 @@ let populationProcessor = {
             // name = this.spawnCreep(roleSpawned, energyCapacity);
         }
         if (constants.isShowPopulationEnabled()) {
-            console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', HARVESTER_ENERGY_COST, ') |',
-                livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', UPGRADER_ENERGY_COST, ') |',
-                livingRepairers, '/', minimumRepairerCount, 'repairers(', REPAIRER_ENERGY_COST, ') |',
-                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', PATHFINDER_ENERGY_COST, ') |',
-                livingBuilders, '/', minimumBuilderCount, 'builders(', BUILDER_ENERGY_COST, ')');
+            console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters |',
+                livingUpgraders, '/', minimumUpgraderCount, 'upgraders |',
+                livingRepairers, '/', minimumRepairerCount, 'repairers |',
+                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders |',
+                livingBuilders, '/', minimumBuilderCount, 'builders');
         }
         if (constants.isShowResourcesEnabled()) {
             console.log(energyAvailable, '/', energyCapacity, 'energy')
