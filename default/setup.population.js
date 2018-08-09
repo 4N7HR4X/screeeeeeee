@@ -1,39 +1,41 @@
-const creeps = {
+/*const creeps = {
     'harvester': {
         tiers: [
             [WORK, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
         ],
-        count: 4
+        count: HARVESTER_COUNT
     },
     'builder': {
         tiers: [
             [WORK, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
         ],
-        count: 3
+        count: BUILDER_COUNT
     },
     'upgrader': {
         tiers: [
             [WORK, MOVE, MOVE, CARRY],
             [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY]
         ],
-        count: 3
+        count: UPGRADER_COUNT
     },
     'pathfinder': {
         tiers: [
             [WORK, MOVE, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
         ],
-        count: 0
+        count: PATHFINDER_COUNT
     },
     'repairer': {
         tiers: [
             [WORK, MOVE, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
         ],
-        count: 3
+        count: REPAIRER_COUNT
     }
-};
+};*/
 
-module.exports = creeps;
+module.exports = {
+
+};
