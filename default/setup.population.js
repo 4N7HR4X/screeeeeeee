@@ -1,6 +1,6 @@
 module.exports = {
     'harvester': {
-        bodyTiers: [
+        tiers: [
             {
                 body: [WORK, MOVE, CARRY],
                 cost: 200
@@ -21,7 +21,7 @@ module.exports = {
         count: 3
     },
     'builder': {
-        bodyTiers: [
+        tiers: [
             {
                 body: [WORK, MOVE, CARRY],
                 cost: 200
@@ -42,7 +42,7 @@ module.exports = {
         count: 3
     },
     'upgrader': {
-        bodyTiers: [
+        tiers: [
             {
                 body: [WORK, MOVE, CARRY],
                 cost: 200
@@ -63,7 +63,7 @@ module.exports = {
         count: 3
     },
     'pathfinder': {
-        bodyTiers: [
+        tiers: [
             {
                 body: [WORK, MOVE, CARRY],
                 cost: 200
@@ -84,7 +84,7 @@ module.exports = {
         count: 3
     },
     'repairer': {
-        bodyTiers: [
+        tiers: [
             {
                 body: [WORK, MOVE, CARRY],
                 cost: 200
@@ -103,6 +103,24 @@ module.exports = {
             }
         ],
         count: 3
-    },
-    maxTier: 3
+    }, getTierToSpawn: function (role, energy) {
+        let returnedTier = null;
+        /*let tiers = this[role].tiers;
+        let maxTier = tiers.length - 1;
+        for (let tierIndex = 0; tierIndex <= maxTier; tierIndex++) {
+            if (energy >= tiers[tierIndex].cost) {
+                returnedTier = tiers[tierIndex];
+            } else {
+                break;
+            }
+        }*/
+        for (let tier in this[role].tiers) {
+            if (energy >= tier.cost) {
+                returnedTier = tier;
+            } else {
+                break;
+            }
+        }
+        return returnedTier;
+    }
 };

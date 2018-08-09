@@ -1,26 +1,14 @@
-
 module.exports = function () {
     StructureSpawn.prototype.createCustomCreep = function (role, energy) {
         let populationConfig = require('setup.population');
-        let maxTier = populationConfig.maxTier;
-
-        let numberOfParts = Math.min(Math.floor(energy / 200), maxTier);
-        let bodyForRole = populationConfig[role].bodyTiers[numberOfParts];
-        console.log(bodyForRole.body, bodyForRole.cost);
-
-        let body = [];
-        for (let i = 0; i < numberOfParts; i++) {
-            body.push(WORK);
+        let tierToSpawn = populationConfig.getTierToSpawn(role, energy);
+        if (tierToSpawn !== null) {
+            console.log(tierToSpawn.body, tierToSpawn.cost);
+            return this.createCreep(tierToSpawn.body, undefined, {role: role});
         }
-        for (let i = 0; i < numberOfParts; i++) {
-            body.push(MOVE);
-        }
-        for (let i = 0; i < numberOfParts; i++) {
-            body.push(CARRY);
-        }
-        return this.createCreep(body, undefined, {role: role});
+        return ERR_NOT_ENOUGH_ENERGY;
     };
-    StructureSpawn.prototype.sayEnergy= function() {
-        
+    StructureSpawn.prototype.sayEnergy = function () {
+
     }
 };
