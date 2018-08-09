@@ -1,4 +1,5 @@
 let constants = require('config');
+let populationConfig = require('setup.population');
 
 const ROLE_HARVESTER = constants.ROLE_HARVESTER();
 const ROLE_BUILDER = constants.ROLE_BUILDER();
@@ -23,11 +24,11 @@ let populationProcessor = {
         let energyCapacity = Game.spawns.Spawn1.room.energyCapacityAvailable;
         let energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
 
-        let minimumHarvesterCount = constants.getMinimumCreepCount(ROLE_HARVESTER);
-        let minimumUpgraderCount = constants.getMinimumCreepCount(ROLE_UPGRADER);
-        let minimumBuilderCount = constants.getMinimumCreepCount(ROLE_BUILDER);
-        let minimumPathFinderCount = constants.getMinimumCreepCount(ROLE_PATHFINDER);
-        let minimumRepairerCount = constants.getMinimumCreepCount(ROLE_REPAIRER);
+        let minimumHarvesterCount = populationConfig.harvester.count;
+        let minimumBuilderCount = populationConfig.builder.count;
+        let minimumUpgraderCount = populationConfig.upgrader.count;
+        let minimumPathFinderCount = populationConfig.pathfinder.count;
+        let minimumRepairerCount = populationConfig.repairer.count;
 
         let livingHarvesters = this.getLivingCreepCount(ROLE_HARVESTER);
         let livingUpgraders = this.getLivingCreepCount(ROLE_UPGRADER);
