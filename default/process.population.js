@@ -1,11 +1,11 @@
 let constants = require('config');
 let populationConfig = require('setup.population');
 
-const ROLE_HARVESTER = constants.ROLE_HARVESTER();
-const ROLE_BUILDER = constants.ROLE_BUILDER();
-const ROLE_UPGRADER = constants.ROLE_UPGRADER();
-const ROLE_PATHFINDER = constants.ROLE_PATHFINDER();
-const ROLE_REPAIRER = constants.ROLE_REPAIRER();
+const HARVESTER = constants.ROLE_HARVESTER();
+const BUILDER = constants.ROLE_BUILDER();
+const UPGRADER = constants.ROLE_UPGRADER();
+const PATHFINDER = constants.ROLE_PATHFINDER();
+const REPAIRER = constants.ROLE_REPAIRER();
 
 let populationProcessor = {
     run: function () {
@@ -31,17 +31,17 @@ let populationProcessor = {
         let minimumPathFinderCount = pathfinder.count;
         let minimumRepairerCount = repairer.count;
 
-        let livingHarvesters = this.getLivingCreepCount(ROLE_HARVESTER);
-        let livingUpgraders = this.getLivingCreepCount(ROLE_UPGRADER);
-        let livingBuilders = this.getLivingCreepCount(ROLE_BUILDER);
-        let livingPathFinders = this.getLivingCreepCount(ROLE_PATHFINDER);
-        let livingRepairers = this.getLivingCreepCount(ROLE_REPAIRER);
+        let livingHarvesters = this.getLivingCreepCount(HARVESTER);
+        let livingUpgraders = this.getLivingCreepCount(UPGRADER);
+        let livingBuilders = this.getLivingCreepCount(BUILDER);
+        let livingPathFinders = this.getLivingCreepCount(PATHFINDER);
+        let livingRepairers = this.getLivingCreepCount(REPAIRER);
 
         let roleSpawned = undefined;
 
         if (livingHarvesters < minimumHarvesterCount) {
             // if we don't have at least the minimum harvesters, spawn one at current energy level
-            roleSpawned = ROLE_HARVESTER;
+            roleSpawned = HARVESTER;
             // name = this.spawnCreep(roleSpawned, energyCapacity);
 
             // if (name === ERR_NOT_ENOUGH_ENERGY) {
@@ -49,22 +49,28 @@ let populationProcessor = {
             name = this.spawnCreep(roleSpawned, energyAvailable);
             // }
             // if (livingBuilders < 1) {
-            //     roleSpawned = ROLE_BUILDER;
+            //     roleSpawned = BUILDER;
             //     name = this.spawnCreep(roleSpawned, energyAvailable);
             // }
             // }
 
         } else if (livingUpgraders < minimumUpgraderCount) {
-            roleSpawned = ROLE_UPGRADER;
+            roleSpawned = UPGRADER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
+            if (name === ERR_NOT_ENOUGH_ENERGY) {
+                if (livingBuilders < 1) {
+                    roleSpawned = BUILDER;
+                    name = this.spawnCreep(roleSpawned, 600);
+                }
+            }
         } else if (livingRepairers < minimumRepairerCount) {
-            roleSpawned = ROLE_REPAIRER;
+            roleSpawned = REPAIRER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else if (livingPathFinders < minimumPathFinderCount) {
-            roleSpawned = ROLE_PATHFINDER;
+            roleSpawned = PATHFINDER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else if (livingBuilders < minimumBuilderCount) {
-            roleSpawned = ROLE_BUILDER;
+            roleSpawned = BUILDER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else {
             // roleSpawned = ROLE_BUILDER;
