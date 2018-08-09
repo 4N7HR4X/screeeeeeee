@@ -4,35 +4,35 @@ const creeps = {
             [WORK, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
         ],
-        count: HARVESTER_COUNT
+        count: 3
     },
     'builder': {
         tiers: [
             [WORK, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
         ],
-        count: BUILDER_COUNT
+        count: 3
     },
     'upgrader': {
         tiers: [
             [WORK, MOVE, MOVE, CARRY],
             [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY]
         ],
-        count: UPGRADER_COUNT
+        count: 3
     },
     'pathfinder': {
         tiers: [
             [WORK, MOVE, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
         ],
-        count: PATHFINDER_COUNT
+        count: 0
     },
     'repairer': {
         tiers: [
             [WORK, MOVE, MOVE, CARRY],
             [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
         ],
-        count: REPAIRER_COUNT
+        count: 3
     }
 };
 

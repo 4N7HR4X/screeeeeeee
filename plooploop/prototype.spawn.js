@@ -5,6 +5,7 @@ module.exports = function () {
         // let numberOfParts = Math.min(Math.floor(energy / 200), config.getMaxSize(role));
 
         let body = creepSetup[role].body;
+        console.log(body);
         // for (let i = 0; i < numberOfParts; i++) {
         //     body.push(WORK);
         // }
