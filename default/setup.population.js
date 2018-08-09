@@ -18,7 +18,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3,
+        count: 2,
         priority: 10,
         tags: ['logistics', 'harvester']
     },
@@ -41,7 +41,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3,
+        count: 2,
         priority: 6,
         tags: ['logistics', 'builder']
     },
@@ -114,6 +114,7 @@ module.exports = {
         priority: 3,
         tags: ['logistics', 'repairer']
     },
+
     getTierToSpawn: function (role, energy) {
         let returnedTier = null;
         let tiers = this[role].tiers;
@@ -127,6 +128,7 @@ module.exports = {
         }
         return returnedTier;
     },
+
     calculateBodyCost: function (body) {
         return body.reduce(function (cost, part) {
             return cost + BODYPART_COST[part];
