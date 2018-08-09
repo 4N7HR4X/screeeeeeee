@@ -76,7 +76,6 @@ let populationProcessor = {
                 if (constants.isDebugEnabled()) {
                     console.log('not spawning');
                 }
-
             } else {
                 if (constants.isShowPopulationEnabled()) {
                     console.log('spawning new', roleSpawned, ':', name);

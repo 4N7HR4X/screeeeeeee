@@ -8,8 +8,7 @@ let roleRepairer = {
     repair: function (creep) {
         let structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
             filter: (s) => (s.hits < s.hitsMax) && (s.structureType !== STRUCTURE_WALL)
-
-        }); 
+        });
         if (structure !== undefined) {
             let repair = creep.repair(structure);
             if (repair === ERR_NOT_IN_RANGE) {

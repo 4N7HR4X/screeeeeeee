@@ -14,7 +14,7 @@ const ROLE_PATHFINDER = constants.ROLE_PATHFINDER();
 const ROLE_REPAIRER = constants.ROLE_REPAIRER();
 
 let colony = {
-    run: function() {
+    run: function () {
         for (let name in Game.creeps) {
             let creep = Game.creeps[name];
             this.performCreepAction(creep);
