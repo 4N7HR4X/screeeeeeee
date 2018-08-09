@@ -105,7 +105,7 @@ module.exports = {
         count: 3
     }, getTierToSpawn: function (role, energy) {
         let returnedTier = null;
-        /*let tiers = this[role].tiers;
+        let tiers = this[role].tiers;
         let maxTier = tiers.length - 1;
         for (let tierIndex = 0; tierIndex <= maxTier; tierIndex++) {
             if (energy >= tiers[tierIndex].cost) {
@@ -113,14 +113,15 @@ module.exports = {
             } else {
                 break;
             }
-        }*/
+        }/*
         for (let tier in this[role].tiers) {
+            console.log(tier);
             if (energy >= tier.cost) {
                 returnedTier = tier;
             } else {
                 break;
             }
-        }
+        }*/
         return returnedTier;
     }
 };
