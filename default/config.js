@@ -26,44 +26,6 @@ const REPAIRER_MAX_SIZE = DEFAULT_MAX_SIZE + 2;
 const COLOR_STROKE_WORK = '#ffffff';
 const COLOR_STROKE_COLLECT = '#ffaa00';
 
-const creeps = {
-    'harvester': {
-        tiers: [
-            [WORK, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
-        ],
-        count: HARVESTER_COUNT
-    },
-    'builder': {
-        tiers: [
-            [WORK, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, CARRY, CARRY, CARRY]
-        ],
-        count: BUILDER_COUNT
-    },
-    'upgrader': {
-        tiers: [
-            [WORK, MOVE, MOVE, CARRY],
-            [WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY]
-        ],
-        count: UPGRADER_COUNT
-    },
-    'pathfinder': {
-        tiers: [
-            [WORK, MOVE, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
-        ],
-        count: PATHFINDER_COUNT
-    },
-    'repairer': {
-        tiers: [
-            [WORK, MOVE, MOVE, CARRY],
-            [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY]
-        ],
-        count: REPAIRER_COUNT
-    }
-};
-
 const config = {
     isDebugEnabled: function () {
         return DEBUG;
@@ -92,10 +54,6 @@ const config = {
             default:
                 return DEFAULT_COUNT;
         }
-    },
-    getPartsForRole: function (role, energyAvailable) {
-        let tier = energyAvailable > 549 ? 1 : 0;
-        return creeps[role].tiers[tier];
     },
     /**
      * @return {string}
