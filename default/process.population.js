@@ -66,6 +66,12 @@ let populationProcessor = {
         } else if (livingRepairers < minimumRepairerCount) {
             roleSpawned = REPAIRER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
+            if (name === ERR_NOT_ENOUGH_ENERGY) {
+                if (livingBuilders < 1) {
+                    roleSpawned = BUILDER;
+                    name = this.spawnCreep(roleSpawned, 400);
+                }
+            }
         } else if (livingPathFinders < minimumPathFinderCount) {
             roleSpawned = PATHFINDER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
