@@ -38,12 +38,22 @@ let populationProcessor = {
         let livingRepairers = this.getLivingCreepCount(ROLE_REPAIRER);
 
         let roleSpawned = undefined;
+
         if (livingHarvesters < minimumHarvesterCount) {
+            // if we don't have at least the minimum harvesters, spawn one at current energy level
             roleSpawned = ROLE_HARVESTER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
-            if (name === ERR_NOT_ENOUGH_ENERGY && livingHarvesters === 0) {
-                name = this.spawnCreep(roleSpawned, energyAvailable);
-            }
+            // name = this.spawnCreep(roleSpawned, energyCapacity);
+
+            // if (name === ERR_NOT_ENOUGH_ENERGY) {
+            //     if (livingHarvesters < 2) {
+            name = this.spawnCreep(roleSpawned, energyAvailable);
+            // }
+            // if (livingBuilders < 1) {
+            //     roleSpawned = ROLE_BUILDER;
+            //     name = this.spawnCreep(roleSpawned, energyAvailable);
+            // }
+            // }
+
         } else if (livingUpgraders < minimumUpgraderCount) {
             roleSpawned = ROLE_UPGRADER;
             name = this.spawnCreep(roleSpawned, energyCapacity);

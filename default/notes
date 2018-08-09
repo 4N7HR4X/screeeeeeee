@@ -22,3 +22,7 @@ Objectives:
 > ?) Find some threshold of priority that will determine if we even want to spawn a creep.
    (perhaps do something like build role.warrior when no logistics screeps are needed.
 
+
+test for new simplified spawn rule.
+spawn whatever size you are currently able to.
+in the section after all minimums have been satisfied, determine most needed creep and spawn one of maximum current energy.
