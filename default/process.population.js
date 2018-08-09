@@ -62,10 +62,10 @@ let populationProcessor = {
         }
         if (constants.isShowPopulationEnabled()) {
             console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', harvester.tiers.length - 1, ') |',
-                livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', builder.tiers.length - 1, ') |',
-                livingRepairers, '/', minimumRepairerCount, 'repairers(', upgrader.tiers.length - 1, ') |',
+                livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', upgrader.tiers.length - 1, ') |',
+                livingRepairers, '/', minimumRepairerCount, 'repairers(', repairer.tiers.length - 1, ') |',
                 livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') |',
-                livingBuilders, '/', minimumBuilderCount, 'builders(', repairer.tiers.length - 1, ')');
+                livingBuilders, '/', minimumBuilderCount, 'builders(', builder.tiers.length - 1, ')');
         }
         if (constants.isShowResourcesEnabled()) {
             console.log(energyAvailable, '/', energyCapacity, 'energy')
