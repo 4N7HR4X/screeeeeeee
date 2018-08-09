@@ -1,7 +1,7 @@
 module.exports = {
     run: function () {
-        Game.creeps.forEach((creep) => {
+        for (let creep in Game.creeps) {
             console.log(creep, Game.creeps[creep].suicide());
-        });
+        }
     }
 };
