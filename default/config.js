@@ -9,7 +9,7 @@ const UPGRADER = 'upgrader';
 const PATHFINDER = 'pathfinder';
 const REPAIRER = 'repairer';
 
-const HARVESTER_COUNT = 2;
+const HARVESTER_COUNT = 4;
 const BUILDER_COUNT = 3;
 const UPGRADER_COUNT = 3;
 const PATHFINDER_COUNT = 0;
