@@ -12,10 +12,11 @@ module.exports.loop = function () {
         let suicide = require('suicide_protocol');
         suicide.run();
     } else {
+        let roomE12S19 = Game.rooms.E12S19;
         populationControl.run();
         colonyActionControl.run();
         towerControl.run();
-        linkControl.run();
+        linkControl.run(roomE12S19);
     }
 
 };
