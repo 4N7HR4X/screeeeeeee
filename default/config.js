@@ -2,6 +2,7 @@ const DEBUG = false;
 const SHOW_POPULATION = true;
 const SHOW_RESOURCES = true;
 const SHOW_ROLES = true;
+const SHOW_TOWER_DEBUG = true;
 
 const HARVESTER = 'harvester';
 const BUILDER = 'builder';
@@ -24,6 +25,9 @@ const config = {
     },
     isShowRolesEnabled: function () {
         return SHOW_ROLES;
+    },
+    isShowTowerDebugEnabled: function () {
+        return SHOW_TOWER_DEBUG;
     },
     /**
      * @return {string}
