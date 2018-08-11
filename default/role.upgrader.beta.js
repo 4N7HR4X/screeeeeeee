@@ -31,9 +31,9 @@ let roleUpgrader = {
             if (closestLinks !== undefined) {
                 closestLink = closestLinks[0];
             }
-            // if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
-            creep.moveTo(closestLink);
-            // }
+            if (creep.withdraw(closestLink, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                creep.moveTo(closestLink);
+            }
         }
     }
 };

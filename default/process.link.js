@@ -19,7 +19,7 @@ let towerControl = {
         }
         linkFrom.transferEnergy(linkTo);
 
-        let creep = linkTo.pos.findClosestByRange(FIND_MY_CREEPS, {
+        /*let creep = linkTo.pos.findClosestByRange(FIND_MY_CREEPS, {
             filter: (c) => c.memory.role === config.ROLE_UPGRADER_BETA()
         });
 
@@ -27,7 +27,7 @@ let towerControl = {
             console.log(creep);
         }
         // linkTo.transferEnergy(creep, creep.energyCapacity - creep.energyAvailable);
-        creep.withdraw(linkTo, RESOURCE_ENERGY);
+        creep.withdraw(linkTo, RESOURCE_ENERGY);*/
     }
 };
 module.exports = towerControl;
