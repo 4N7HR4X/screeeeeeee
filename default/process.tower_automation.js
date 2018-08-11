@@ -7,14 +7,17 @@ let towerControl = {
         for (let tower of towers) {
             let target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
             if (target !== undefined) {
+                tower.say("A");
                 tower.attack(target);
             } else {
                 target = tower.pos.findClosestByRange(FIND_MY_STRUCTURES, {filter: (s) => s.hits < s.hitsMax});
                 if (target !== undefined) {
+                    tower.say("S");
                     tower.repair(target);
                 } else {
                     target = tower.pos.findClosestByRange(FIND_MY_CREEPS, {filter: (s) => s.hits < s.hitsMax});
                     if (target !== undefined) {
+                        tower.say("C");
                         tower.repair(target);
                     } else {
 
