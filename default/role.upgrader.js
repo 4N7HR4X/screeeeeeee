@@ -7,7 +7,7 @@ let roleUpgrader = {
     role: 'upgrader',
 
     /** @param {Creep} creep
-     * @deprecated
+     * @deprecated once Links are built for upgrading
      * **/
     performAction: function (creep) {
         if (CONVERT_TO_BETA) {
