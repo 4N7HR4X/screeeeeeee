@@ -5,6 +5,7 @@ let towerControl = {
         let room = Game.rooms.E12S19;
 
         const linkFrom = room.lookForAt('structure', 10, 17)[0];
+        console.log(linkFrom);
 
         const linkTo = linkFrom.pos.findInRange(FIND_MY_STRUCTURES, 30,
             {
