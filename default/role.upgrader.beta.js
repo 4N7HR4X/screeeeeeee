@@ -32,6 +32,7 @@ let roleUpgrader = {
                 closestLink = closestLinks[0];
             }
             if (creep.withdraw(closestLink, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+                creep.say('L');
                 creep.moveTo(closestLink);
             }
         }
