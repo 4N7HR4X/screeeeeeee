@@ -73,7 +73,7 @@ module.exports = {
             {
                 body: [WORK, MOVE, CARRY],
                 cost: 200
-            }/*,
+            },
             {
                 body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
                 cost: 400
@@ -85,9 +85,9 @@ module.exports = {
             {
                 body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
                 cost: 800
-            }*/
+            }
         ],
-        count: 1,
+        count: 2,
         priority: 8,
         tags: ['logistics', 'upgrader.alpha', 'miner']
     },
