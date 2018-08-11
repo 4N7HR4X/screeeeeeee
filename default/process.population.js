@@ -89,8 +89,7 @@ let populationProcessor = {
             roleSpawned = PATHFINDER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else if (livingUpgradersBeta < minimumUpgraderBetaCount) {
-            roleSpawned = UPGRADER_BETA;
-            console.log(roleSpawned);
+            roleSpawned = UPGRADER_BETA; 
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else if (livingBuilders < minimumBuilderCount) {
             roleSpawned = BUILDER;

@@ -29,7 +29,7 @@ let roleUpgrader = {
             });
             console.log('closestLink', closestLink);
             // if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
-            creep.moveTo(closestLink);
+            creep.moveTo(closestLink.pos.x, closestLink.pos.y);
             // }
         }
     }
