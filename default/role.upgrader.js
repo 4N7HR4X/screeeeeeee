@@ -1,7 +1,7 @@
 const constants = require('config');
 const baseRole = require('role.base');
 
-const CONVERT_TO_BETA = true;
+const CONVERT_TO_BETA = false;
 
 let roleUpgrader = {
     role: 'upgrader',
@@ -11,7 +11,9 @@ let roleUpgrader = {
      * **/
     performAction: function (creep) {
         if (CONVERT_TO_BETA) {
-            creep.memory.role = constants.ROLE_UPGRADER_BETA();
+            if (creep.memory.role === constants.ROLE_UPGRADER()) {
+                creep.memory.role = constants.ROLE_UPGRADER_BETA();
+            }
         } else {
             if (creep.memory.upgrading && creep.carry.energy === 0) {
                 creep.memory.upgrading = false;
