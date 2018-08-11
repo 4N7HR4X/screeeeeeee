@@ -27,7 +27,7 @@ let towerControl = {
             console.log(creep);
         }
         // linkTo.transferEnergy(creep, creep.energyCapacity - creep.energyAvailable);
-        creep.withdraw(linkTo, RESOURCE_ENERGY, creep.energyCapacity - creep.energyAvailable);
+        creep.withdraw(linkTo, RESOURCE_ENERGY);
     }
 };
 module.exports = towerControl;
