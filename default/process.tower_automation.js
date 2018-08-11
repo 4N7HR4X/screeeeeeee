@@ -8,6 +8,7 @@ let towerControl = {
         for (let tower of towers) {
             let target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
             if (target !== undefined) {
+                console.log(target);
                 if(config.isShowTowerDebugEnabled()) {
                     console.log('attacking');
                 }
