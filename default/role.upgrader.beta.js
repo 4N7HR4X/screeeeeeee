@@ -28,9 +28,9 @@ let roleUpgrader = {
                 filter: (s) => s.structureType === STRUCTURE_LINK
             });
             console.log('closestLink',closestLink);
-            if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
+            // if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
                 creep.moveTo(closestLink);
-            }
+            // }
         }
     }
 };
