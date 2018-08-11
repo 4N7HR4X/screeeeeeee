@@ -11,7 +11,7 @@ let towerControl = {
         }
 
         const linkTo = linkFrom.pos.findInRange(FIND_MY_STRUCTURES, 30, {
-            filter: {structureType: STRUCTURE_LINK}
+            filter: (s) => s.structureType === STRUCTURE_LINK && s !== linkFrom
         })[0];
 
         console.log(linkTo);
