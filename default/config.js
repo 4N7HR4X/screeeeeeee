@@ -7,6 +7,8 @@ const SHOW_TOWER_DEBUG = false;
 const HARVESTER = 'harvester';
 const BUILDER = 'builder';
 const UPGRADER = 'upgrader';
+const UPGRADER_ALPHA = 'upgrader.alpha';
+const UPGRADER_BETA = 'upgrader.beta';
 const PATHFINDER = 'pathfinder';
 const REPAIRER = 'repairer';
 
@@ -40,6 +42,18 @@ const config = {
      */
     ROLE_UPGRADER: function () {
         return UPGRADER;
+    },
+    /**
+     * @return {string}
+     */
+    ROLE_UPGRADER_ALPHA: function () {
+        return UPGRADER_ALPHA;
+    },
+    /**
+     * @return {string}
+     */
+    ROLE_UPGRADER_BETA: function () {
+        return UPGRADER_BETA;
     },
     /**
      * @return {string}

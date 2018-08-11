@@ -1,34 +1,36 @@
 const constants = require('config');
 const baseRole = require('role.base');
 
+// this one is the technician
 let roleUpgrader = {
-    role: 'upgrader',
+    role: 'upgrader.beta',
 
     /** @param {Creep} creep **/
     performAction: function (creep) {
         if (creep.memory.upgrading && creep.carry.energy === 0) {
             creep.memory.upgrading = false;
-            // creep.say('harvesting');
         }
         if (!creep.memory.upgrading && creep.carry.energy === creep.carryCapacity) {
             creep.memory.upgrading = true;
-            // creep.say('upgrading');
         }
-
+        const controller = creep.room.controller;
         if (creep.memory.upgrading) {
-            const controller = creep.room.controller;
             if (creep.upgradeController(controller) === ERR_NOT_IN_RANGE) {
-                creep.moveTo(controller, constants.PATH_STYLE_TO_WORK);
+                creep.moveTo(controller, constants.PATH_STYLE_TO_WORK());
             } else {
                 if (constants.isShowRolesEnabled()) {
                     creep.say('U');
                 }
             }
         } else {
-            // if (creep.memory.role === 'builder') {
-            //     console.log(creep.memory.working)
-            // }
-            baseRole.extractResource(creep);
+            //find link closest to controller and extract energy from it
+            let closestLink = controller.pos.findClosestByRange(FIND_STRUCTURES, 10, {
+                filter: (s) => s.structureType === STRUCTURE_LINK
+            });
+            console.log(closestLink);
+            if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
+                creep.moveTo(closestLink);
+            }
         }
     }
 };

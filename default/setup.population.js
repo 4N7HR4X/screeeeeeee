@@ -68,6 +68,52 @@ module.exports = {
         priority: 8,
         tags: ['logistics', 'upgrader']
     },
+    'upgrader.alpha': {
+        tiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            },
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
+            }
+        ],
+        count: 0,
+        priority: 8,
+        tags: ['logistics', 'upgrader.alpha', 'miner']
+    },
+    'upgrader.beta': {
+        tiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            }/*,
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
+            }*/
+        ],
+        count: 1,
+        priority: 8,
+        tags: ['logistics', 'upgrader.beta', 'technician']
+    },
     'pathfinder': {
         tiers: [
             {
