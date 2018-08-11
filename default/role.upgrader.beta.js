@@ -27,7 +27,8 @@ let roleUpgrader = {
             let closestLink = controller.pos.findInRange(FIND_STRUCTURES, 3, {
                 filter: (s) => s.structureType === STRUCTURE_LINK
             });
-            console.log('closestLink', closestLink.pos);
+            let structure = Game.structures[closestLink];
+            console.log('closestLink', structure);
             // if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
             creep.moveTo(closestLink);
             // }
