@@ -17,7 +17,7 @@ let towerControl = {
         console.log(linkTo);
         linkFrom.transferEnergy(linkTo);
 
-        let creep = linkTo.findClosestByRange(FIND_MY_CREEPS, {
+        let creep = linkTo.pos.findClosestByRange(FIND_MY_CREEPS, {
             filter: (c) => c.memory.role === config.ROLE_UPGRADER_BETA()
         });
 
