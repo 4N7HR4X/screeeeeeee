@@ -1,4 +1,4 @@
-let exports = {
+let towerControl = {
     run: function () {
         let towers = Game.rooms.E12S19.find(FIND_MY_STRUCTURES, {
             filter: (s) => s.structureType === STRUCTURE_TOWER
@@ -26,4 +26,4 @@ let exports = {
 
     }
 };
-module.exports = exports;
+module.exports = towerControl;
