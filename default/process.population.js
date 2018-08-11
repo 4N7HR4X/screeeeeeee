@@ -61,6 +61,9 @@ let populationProcessor = {
                 if (livingBuilders < 1) {
                     roleSpawned = BUILDER;
                     name = this.spawnCreep(roleSpawned, 600);
+                } else if (livingUpgraders < 1) {
+                    roleSpawned = UPGRADER;
+                    name = this.spawnCreep(roleSpawned, 400);
                 }
             }
         } else if (livingRepairers < minimumRepairerCount) {
