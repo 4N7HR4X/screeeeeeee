@@ -90,6 +90,7 @@ let populationProcessor = {
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else if (livingUpgradersBeta < minimumUpgraderBetaCount) {
             roleSpawned = UPGRADER_BETA;
+            console.log(roleSpawned);
             name = this.spawnCreep(roleSpawned, energyCapacity);
         } else if (livingBuilders < minimumBuilderCount) {
             roleSpawned = BUILDER;
@@ -106,6 +107,7 @@ let populationProcessor = {
         if (constants.isShowPopulationEnabled()) {
             console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', harvester.tiers.length - 1, ') |',
                 livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', upgrader.tiers.length - 1, ') |',
+                livingUpgradersBeta, '/', minimumUpgraderBetaCount, 'upgradersBeta(', upgraderBeta.tiers.length - 1, ') |',
                 livingRepairers, '/', minimumRepairerCount, 'repairers(', repairer.tiers.length - 1, ') |',
                 livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') |',
                 livingBuilders, '/', minimumBuilderCount, 'builders(', builder.tiers.length - 1, ')');
