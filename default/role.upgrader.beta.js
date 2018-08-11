@@ -24,7 +24,7 @@ let roleUpgrader = {
             }
         } else {
             //find link closest to controller and extract energy from it
-            let closestLink = controller.pos.findClosestByRange(FIND_STRUCTURES, 10, {
+            let closestLink = controller.pos.findClosestByRange(FIND_STRUCTURES, 30, {
                 filter: (s) => s.structureType === STRUCTURE_LINK
             });
             console.log('closestLink',closestLink);
