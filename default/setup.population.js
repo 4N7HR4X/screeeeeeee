@@ -110,7 +110,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 4,
+        count: 9,
         priority: 8,
         tags: ['logistics', 'upgrader.beta', 'technician']
     },

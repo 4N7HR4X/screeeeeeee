@@ -7,7 +7,7 @@ let roleUpgrader = {
     role: 'upgrader',
 
     /** @param {Creep} creep
-     * @deprecated once Links are built for upgrading
+     * @deprecated once Links are built for upgrading -- our idle builders will fall back to this role.
      * **/
     performAction: function (creep) {
         if (CONVERT_TO_BETA) {
