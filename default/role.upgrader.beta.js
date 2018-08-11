@@ -26,8 +26,10 @@ let roleUpgrader = {
             //find link closest to controller and extract energy from it
             let closestLink = controller.pos.findInRange(FIND_STRUCTURES, 3, {
                 filter: (s) => s.structureType === STRUCTURE_LINK
+            })[0];
+            let structure = creep.room.find(FIND_MY_STRUCTURES, {
+                filter: (s) => s.structureType === STRUCTURE_LINK
             });
-            let structure = Game.structures[closestLink];
             console.log('closestLink', structure);
             // if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
             creep.moveTo(closestLink);
