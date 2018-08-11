@@ -24,11 +24,12 @@ let roleUpgrader = {
             }
         } else {
             //find link closest to controller and extract energy from it
-            let closestLink = controller.pos.findInRange(FIND_STRUCTURES, 3, {
+            let closestLinks = controller.pos.findInRange(FIND_STRUCTURES, 3, {
                 filter: (s) => s.structureType === STRUCTURE_LINK
             });
-            if (closestLink !== undefined) {
-                closestLink = closestLink[0];
+            let closestLink;
+            if (closestLinks !== undefined) {
+                closestLink = closestLinks[0];
             }
             // if (creep.harvest(closestLink) === ERR_NOT_IN_RANGE) {
             creep.moveTo(closestLink);
