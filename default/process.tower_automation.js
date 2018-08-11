@@ -1,7 +1,20 @@
 const config = require('config');
 let towerControl = {
     run: function () {
-        let towers = Game.rooms.E12S19.find(FIND_MY_STRUCTURES, {
+
+        let room = Game.rooms.E12S19;
+
+        const linkFrom = room.lookForAt('structure', 10, 17)[0];
+
+        const linkTo = linkFrom.pos.findInRange(FIND_MY_STRUCTURES, 30,
+            {
+                filter: {structureType: STRUCTURE_LINK}
+            })[0];
+
+        linkFrom.transferEnergy(linkTo);
+
+/*
+        let towers = room.find(FIND_MY_STRUCTURES, {
             filter: (s) => s.structureType === STRUCTURE_TOWER
         });
 
@@ -9,33 +22,33 @@ let towerControl = {
             let target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
             if (target !== null) {
                 console.log(target);
-                if(config.isShowTowerDebugEnabled()) {
+                if (config.isShowTowerDebugEnabled()) {
                     console.log('attacking');
                 }
                 tower.attack(target);
             } else {
                 target = tower.pos.findClosestByRange(FIND_MY_STRUCTURES, {filter: (s) => (s.hits < s.hitsMax) && (tower.pos.getRangeTo(s) < 10)});
                 if (target !== null) {
-                    if(config.isShowTowerDebugEnabled()) {
+                    if (config.isShowTowerDebugEnabled()) {
                         console.log('repairing structure');
                     }
                     tower.repair(target);
                 } else {
                     target = tower.pos.findClosestByRange(FIND_MY_CREEPS, {filter: (s) => (s.hits < s.hitsMax) && (tower.pos.getRangeTo(s) < 10)});
                     if (target !== null) {
-                        if(config.isShowTowerDebugEnabled()) {
+                        if (config.isShowTowerDebugEnabled()) {
                             console.log('repairing creep');
                         }
                         tower.repair(target);
                     } else {
-                        if(config.isShowTowerDebugEnabled()) {
+                        if (config.isShowTowerDebugEnabled()) {
                             console.log('doing foggol');
                         }
                     }
 
                 }
             }
-        }
+        }*/
 
     }
 };
