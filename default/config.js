@@ -2,7 +2,7 @@ const DEBUG = false;
 const SHOW_POPULATION = true;
 const SHOW_RESOURCES = true;
 const SHOW_ROLES = true;
-const SHOW_TOWER_DEBUG = true;
+const SHOW_TOWER_DEBUG = false;
 
 const HARVESTER = 'harvester';
 const BUILDER = 'builder';
