@@ -6,23 +6,23 @@ let towerControl = {
         });
 
         for (let tower of towers) {
-            let target = tower.pos.findInRange(FIND_HOSTILE_CREEPS, 10);
-            if (target !== undefined) {
+            let target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+            if (target !== null) {
                 console.log(target);
                 if(config.isShowTowerDebugEnabled()) {
                     console.log('attacking');
                 }
                 tower.attack(target);
             } else {
-                target = tower.pos.findInRange(FIND_MY_STRUCTURES, 10, {filter: (s) => s.hits < s.hitsMax});
-                if (target !== undefined) {
+                target = tower.pos.findClosestByRange(FIND_MY_STRUCTURES, {filter: (s) => (s.hits < s.hitsMax) && (tower.pos.getRangeTo(s))});
+                if (target !== null) {
                     if(config.isShowTowerDebugEnabled()) {
                         console.log('repairing structure');
                     }
                     tower.repair(target);
                 } else {
-                    target = tower.pos.findInRange(FIND_MY_CREEPS, 10, {filter: (s) => s.hits < s.hitsMax});
-                    if (target !== undefined) {
+                    target = tower.pos.findClosestByRange(FIND_MY_CREEPS, {filter: (s) => (s.hits < s.hitsMax) && (tower.pos.getRangeTo(s))});
+                    if (target !== null) {
                         if(config.isShowTowerDebugEnabled()) {
                             console.log('repairing creep');
                         }
