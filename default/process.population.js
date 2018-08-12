@@ -183,6 +183,8 @@ let populationProcessor = {
                     let spawning = Game.spawns.Spawn1.spawning;
                     if (constants.isDebugEnabled()) {
                         console.log('already', spawning === undefined ? 'busy' : 'spawning ' + spawning.name);
+                    } else if (constants.isShowPopulationEnabled()) {
+                        console.log(spawning === undefined ? 'busy' : 'spawning ' + spawning.name, (spawning !== undefined) ? this.calculateBodyCost(Game.creeps[spawning.name].body) : '');
                     }
                     break;
             }
@@ -206,6 +208,11 @@ let populationProcessor = {
 
     spawnCreep: function (role, energy) {
         return Game.spawns.Spawn1.createCustomCreep(role, energy);
+    },
+    calculateBodyCost: function (body) {
+        return body.reduce(function (cost, part) {
+            return cost + BODYPART_COST[part];
+        }, 0);
     }
 };
 
