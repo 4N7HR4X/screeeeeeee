@@ -169,13 +169,13 @@ let populationProcessor = {
             //todo figure out which creep would be most useful to build
         }
         if (constants.isShowPopulationEnabled()) {
-            console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', harvester.tiers.length - 1, ') |',
+            console.log(livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', harvester.tiers.length - 1, ') |\n',
                 // livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', upgrader.tiers.length - 1, ') |',
-                livingUpgradersAlpha, '/', minimumUpgraderAlphaCount, 'upgradersAlpha(', upgraderAlpha.tiers.length - 1, ') |',
-                livingUpgradersBeta, '/', minimumUpgraderBetaCount, 'upgradersBeta(', upgraderBeta.tiers.length - 1, ') |',
-                livingRepairers, '/', minimumRepairerCount, 'repairers(', repairer.tiers.length - 1, ') |',
-                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') |',
-                livingBuilders, '/', minimumBuilderCount, 'builders(', builder.tiers.length - 1, ')');
+                livingUpgradersAlpha, '/', minimumUpgraderAlphaCount, 'upgradersAlpha(', upgraderAlpha.tiers.length - 1, ') |\n',
+                livingUpgradersBeta, '/', minimumUpgraderBetaCount, 'upgradersBeta(', upgraderBeta.tiers.length - 1, ') |\n',
+                livingRepairers, '/', minimumRepairerCount, 'repairers(', repairer.tiers.length - 1, ') |\n',
+                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') |\n',
+                livingBuilders, '/', minimumBuilderCount, 'builders(', builder.tiers.length - 1, ') |');
         }
         if (constants.isShowResourcesEnabled()) {
             console.log(energyAvailable, '/', energyCapacity, 'energy')
