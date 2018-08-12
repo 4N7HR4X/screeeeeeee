@@ -82,11 +82,13 @@ let populationProcessor = {
         } else if (livingUpgraders < minimumUpgraderCount) {
             roleSpawned = UPGRADER;
             energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 1) {
                     roleSpawned = BUILDER;
                     energyToSpend = energyCapacity;
+                    energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingUpgraders < 1) {
                     roleSpawned = UPGRADER;
@@ -101,6 +103,7 @@ let populationProcessor = {
         } else if (livingRepairers < minimumRepairerCount) {
             roleSpawned = REPAIRER;
             energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 2) {
@@ -116,14 +119,17 @@ let populationProcessor = {
         } else if (livingPathFinders < minimumPathFinderCount) {
             roleSpawned = PATHFINDER;
             energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
         } else if (livingUpgradersAlpha < minimumUpgraderAlphaCount) {
             roleSpawned = UPGRADER_ALPHA;
             energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
         } else if (livingUpgradersBeta < minimumUpgraderBetaCount) {
             roleSpawned = UPGRADER_BETA;
             energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 2) {
@@ -139,6 +145,7 @@ let populationProcessor = {
         } else if (livingBuilders < minimumBuilderCount) {
             roleSpawned = BUILDER;
             energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 2) {
