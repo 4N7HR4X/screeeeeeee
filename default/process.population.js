@@ -62,9 +62,13 @@ let populationProcessor = {
 
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingHarvesters < 2) {
+                    // roleSpawned = HARVESTER;
+                    roleSpawned = HARVESTER + '.alpha';
                     energyToSpend = Math.max(400, energyAvailable);
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                     if (livingHarvesters === 0 && name === ERR_NOT_ENOUGH_ENERGY) {
+                        roleSpawned = HARVESTER;
+                        // roleSpawned = HARVESTER + '.alpha';
                         energyToSpend = 200;
                         name = this.spawnCreep(roleSpawned, energyToSpend);
                     }
