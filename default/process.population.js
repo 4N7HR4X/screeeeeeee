@@ -176,7 +176,7 @@ let populationProcessor = {
             switch (name) {
                 case ERR_NOT_ENOUGH_ENERGY:
                     if (constants.isShowPopulationEnabled()) {
-                        console.log('insufficient energy for next spawn:', roleSpawned, '@', energyToSpend);
+                        console.log('next spawn:', roleSpawned, '@', energyToSpend);
                     }
                     break;
                 case ERR_BUSY:
