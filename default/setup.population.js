@@ -21,6 +21,28 @@ module.exports = {
         count: 2,
         priority: 10,
         tags: ['logistics', 'harvester']
+    },'harvester.alpha': {
+        tiers: [
+            {
+                body: [WORK, MOVE, CARRY],
+                cost: 200
+            },
+            {
+                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                cost: 400
+            },
+            {
+                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                cost: 600
+            },
+            {
+                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                cost: 800
+            }
+        ],
+        count: 1,
+        priority: 10,
+        tags: ['logistics', 'harvester', 'tower']
     },
     'builder': {
         tiers: [
@@ -87,7 +109,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 3,
+        count: 2,
         priority: 8,
         tags: ['logistics', 'upgrader.alpha', 'miner']
     },

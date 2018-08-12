@@ -1,4 +1,5 @@
 const harvesterRole = require('role.harvester');
+const harvesterAlphaRole = require('role.harvester.alpha');
 const builderRole = require('role.builder');
 const upgraderRole = require('role.upgrader');
 const upgraderAlphaRole = require('role.upgrader.alpha');
@@ -7,6 +8,7 @@ const pathfinderRole = require('role.pathfinder');
 const repairerRole = require('role.repairer');
 
 const HARVESTER = harvesterRole.role;
+const HARVESTER_ALPHA = harvesterAlphaRole.role;
 const BUILDER = builderRole.role;
 const UPGRADER = upgraderRole.role;
 const UPGRADER_ALPHA = upgraderAlphaRole.role;
@@ -25,6 +27,9 @@ let colony = {
         switch (creep.memory.role) {
             case HARVESTER:
                 harvesterRole.performAction(creep);
+                break;
+            case HARVESTER_ALPHA:
+                harvesterAlphaRole.performAction(creep);
                 break;
             case BUILDER:
                 builderRole.performAction(creep);
