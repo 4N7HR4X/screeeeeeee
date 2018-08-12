@@ -22,7 +22,14 @@ let populationProcessor = {
         let linksExist = Game.spawns.Spawn1.room.find(FIND_MY_STRUCTURES, {
             filter: (s) => s.structureType === STRUCTURE_LINK
         }) !== undefined;
-        console.log(linksExist);
+        if (constants.isDebugEnabled()) {
+            console.log('linksExist:', linksExist);
+        }
+
+        let roomNames = Game.rooms.filter((r) => Game.rooms[r].my);
+        for (let room of roomNames) {
+            console.log(room);
+        }
 
         let harvester = populationConfig.harvester;
         let builder = populationConfig.builder;
