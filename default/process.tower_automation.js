@@ -28,7 +28,7 @@ let towerControl = {
                         if (config.isShowTowerDebugEnabled()) {
                             console.log('repairing creep');
                         }
-                        tower.repair(target);
+                        tower.heal(target);
                     } else {
                         if (config.isShowTowerDebugEnabled()) {
                             console.log('doing foggol');
