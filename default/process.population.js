@@ -114,9 +114,9 @@ let populationProcessor = {
                     roleSpawned = BUILDER;
                     energyToSpend = 400;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
-                } else if (livingRepairers < 2) {
+                } else if (livingRepairers < 2 /*minimumRepairerCount - 1*/) {
                     roleSpawned = REPAIRER;
-                    energyToSpend = 600;
+                    energyToSpend = 400;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
