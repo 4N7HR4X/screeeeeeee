@@ -173,13 +173,13 @@ let populationProcessor = {
         }
         if (constants.isShowPopulationEnabled()) {
             console.log('|',
-                livingHarvesters, '/', minimumHarvesterCount, 'harvesters(', harvester.tiers.length - 1, ') \n|',
+                livingHarvesters, '/', minimumHarvesterCount, 'harvesters (', harvester.tiers.length - 1, ') \n|',
                 // livingUpgraders, '/', minimumUpgraderCount, 'upgraders(', upgrader.tiers.length - 1, ') \n|',
-                livingUpgradersAlpha, '/', minimumUpgraderAlphaCount, 'upgradersAlpha(', upgraderAlpha.tiers.length - 1, ') \n|',
-                livingUpgradersBeta, '/', minimumUpgraderBetaCount, 'upgradersBeta(', upgraderBeta.tiers.length - 1, ') \n|',
-                livingRepairers, '/', minimumRepairerCount, 'repairers(', repairer.tiers.length - 1, ') \n|',
-                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders(', pathfinder.tiers.length - 1, ') \n|',
-                livingBuilders, '/', minimumBuilderCount, 'builders(', builder.tiers.length - 1, ') ');
+                livingUpgradersAlpha, '/', minimumUpgraderAlphaCount, 'upgradersAlpha (', upgraderAlpha.tiers.length - 1, ') \n|',
+                livingUpgradersBeta, '/', minimumUpgraderBetaCount, 'upgradersBeta (', upgraderBeta.tiers.length - 1, ') \n|',
+                livingRepairers, '/', minimumRepairerCount, 'repairers (', repairer.tiers.length - 1, ') \n|',
+                livingPathFinders, '/', minimumPathFinderCount, 'pathfinders (', pathfinder.tiers.length - 1, ') \n|',
+                livingBuilders, '/', minimumBuilderCount, 'builders  d(', builder.tiers.length - 1, ') ');
         }
 
         if (!(name < 0)) {
