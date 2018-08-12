@@ -184,7 +184,7 @@ let populationProcessor = {
                     if (constants.isDebugEnabled()) {
                         console.log('already', spawning === undefined ? 'busy' : 'spawning ' + spawning.name);
                     } else if (constants.isShowPopulationEnabled()) {
-                        console.log(spawning === undefined ? 'busy' : 'spawning ' + spawning.name, (spawning !== undefined) ? this.calculateBodyCost(Game.creeps[spawning.name].body) : '');
+                        console.log(spawning === undefined ? 'busy' : 'spawning ' + spawning.name);
                     }
                     break;
             }
