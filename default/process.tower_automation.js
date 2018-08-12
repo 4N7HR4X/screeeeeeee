@@ -7,7 +7,6 @@ let towerControl = {
         let towers = room.find(FIND_MY_STRUCTURES, {
             filter: (s) => s.structureType === STRUCTURE_TOWER
         });
-
         for (let tower of towers) {
             let target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
             if (target !== null) {
