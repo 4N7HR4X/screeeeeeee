@@ -76,6 +76,10 @@ let populationProcessor = {
                     roleSpawned = UPGRADER_BETA;
                     energyToSpend = Math.max(400, energyAvailable);
                     name = this.spawnCreep(roleSpawned, energyToSpend);
+                } else if (livingRepairers < 1) {
+                    roleSpawned = REPAIRER;
+                    energyToSpend = Math.max(400, energyAvailable);
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
 
