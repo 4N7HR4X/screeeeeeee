@@ -75,15 +75,15 @@ module.exports = {
                 cost: 200
             },
             {
-                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                body: [WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 400
             },
             {
-                body: [WORK, WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY],
+                body: [WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 600
             },
             {
-                body: [WORK, WORK, WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+                body: [WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 800
             }
         ],
