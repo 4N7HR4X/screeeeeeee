@@ -19,7 +19,10 @@ let populationProcessor = {
         let name = undefined;
         let energyCapacity = Game.spawns.Spawn1.room.energyCapacityAvailable;
         let energyAvailable = Game.spawns.Spawn1.room.energyAvailable;
-
+        let linksExist = Game.spawns.Spawn1.room.find(FIND_MY_STRUCTURES, {
+            filter: (s) => s.structureType === STRUCTURE_LINK
+        }) !== undefined;
+        console.log(linksExist);
 
         let harvester = populationConfig.harvester;
         let builder = populationConfig.builder;
@@ -98,6 +101,15 @@ let populationProcessor = {
         } else if (livingUpgradersBeta < minimumUpgraderBetaCount) {
             roleSpawned = UPGRADER_BETA;
             name = this.spawnCreep(roleSpawned, energyCapacity);
+            if (name === ERR_NOT_ENOUGH_ENERGY) {
+                if (livingBuilders < 2) {
+                    roleSpawned = BUILDER;
+                    name = this.spawnCreep(roleSpawned, 400);
+                } else if (livingRepairers < 2) {
+                    roleSpawned = REPAIRER;
+                    name = this.spawnCreep(roleSpawned, 600);
+                }
+            }
         } else if (livingBuilders < minimumBuilderCount) {
             roleSpawned = BUILDER;
             name = this.spawnCreep(roleSpawned, energyCapacity);
