@@ -86,7 +86,7 @@ let populationProcessor = {
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
-        } else if (livingUpgraders < minimumUpgraderCount) {
+        } /*else if (livingUpgraders < minimumUpgraderCount) {
             roleSpawned = UPGRADER;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
@@ -107,7 +107,7 @@ let populationProcessor = {
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
-        } else if (livingRepairers < minimumRepairerCount) {
+        }*/ else if (livingRepairers < minimumRepairerCount) {
             roleSpawned = REPAIRER;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
@@ -122,7 +122,7 @@ let populationProcessor = {
                     energyToSpend = 400;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingUpgradersBeta < 4) {
-                    roleSpawned = REPAIRER;
+                    roleSpawned = UPGRADER_BETA;
                     energyToSpend = 400;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
