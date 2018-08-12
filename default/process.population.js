@@ -56,7 +56,8 @@ let populationProcessor = {
         if (livingHarvesters < minimumHarvesterCount) {
             // if we don't have at least the minimum harvesters, spawn one at current energy level
             roleSpawned = HARVESTER;
-            energyToSpend = energyCapacity
+            energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
 
             if (name === ERR_NOT_ENOUGH_ENERGY) {
@@ -208,11 +209,6 @@ let populationProcessor = {
 
     spawnCreep: function (role, energy) {
         return Game.spawns.Spawn1.createCustomCreep(role, energy);
-    },
-    calculateBodyCost: function (body) {
-        return body.reduce(function (cost, part) {
-            return cost + BODYPART_COST[part];
-        }, 0);
     }
 };
 
