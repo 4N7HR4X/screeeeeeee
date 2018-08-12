@@ -51,6 +51,7 @@ let populationProcessor = {
         let livingRepairers = this.getLivingCreepCount(REPAIRER);
 
         let roleSpawned = undefined;
+        let energyToSpend = undefined;
 
         if (livingHarvesters < minimumHarvesterCount) {
             // if we don't have at least the minimum harvesters, spawn one at current energy level
@@ -59,68 +60,85 @@ let populationProcessor = {
 
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingHarvesters < 2) {
-                    name = this.spawnCreep(roleSpawned, Math.max(400, energyAvailable));
+                    energyToSpend = Math.max(400, energyAvailable);
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                     if (livingHarvesters === 0 && name === ERR_NOT_ENOUGH_ENERGY) {
-                        name = this.spawnCreep(roleSpawned, 200);
+                        energyToSpend = 200;
+                        name = this.spawnCreep(roleSpawned, energyToSpend);
                     }
                 } else if (livingBuilders < 1) {
                     roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, energyAvailable);
+                    energyToSpend = energyAvailable;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
 
         } else if (livingUpgraders < minimumUpgraderCount) {
             roleSpawned = UPGRADER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
+            energyToSpend = energyCapacity;
+            name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 1) {
                     roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, 600);
+                    energyToSpend = energyCapacity;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingUpgraders < 1) {
                     roleSpawned = UPGRADER;
-                    name = this.spawnCreep(roleSpawned, 400);
+                    energyToSpend = 400;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingRepairers < 1) {
                     roleSpawned = REPAIRER;
-                    name = this.spawnCreep(roleSpawned, 400);
+                    energyToSpend = 400;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
         } else if (livingRepairers < minimumRepairerCount) {
             roleSpawned = REPAIRER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
+            energyToSpend = energyCapacity;
+            name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 2) {
                     roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, 400);
+                    energyToSpend = 400;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingRepairers < 2) {
                     roleSpawned = REPAIRER;
-                    name = this.spawnCreep(roleSpawned, 600);
+                    energyToSpend = 600;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
         } else if (livingPathFinders < minimumPathFinderCount) {
             roleSpawned = PATHFINDER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
+            energyToSpend = energyCapacity;
+            name = this.spawnCreep(roleSpawned, energyToSpend);
         } else if (livingUpgradersAlpha < minimumUpgraderAlphaCount) {
             roleSpawned = UPGRADER_ALPHA;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
+            energyToSpend = energyCapacity;
+            name = this.spawnCreep(roleSpawned, energyToSpend);
         } else if (livingUpgradersBeta < minimumUpgraderBetaCount) {
             roleSpawned = UPGRADER_BETA;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
+            energyToSpend = energyCapacity;
+            name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 2) {
                     roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, 400);
+                    energyToSpend = 400;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingRepairers < 2) {
                     roleSpawned = REPAIRER;
-                    name = this.spawnCreep(roleSpawned, 600);
+                    energyToSpend = 600;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
         } else if (livingBuilders < minimumBuilderCount) {
             roleSpawned = BUILDER;
-            name = this.spawnCreep(roleSpawned, energyCapacity);
+            energyToSpend = energyCapacity;
+            name = this.spawnCreep(roleSpawned, energyToSpend);
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 2) {
                     roleSpawned = BUILDER;
-                    name = this.spawnCreep(roleSpawned, 400);
+                    energyToSpend = 400;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
         } else {
@@ -153,7 +171,7 @@ let populationProcessor = {
             switch (name) {
                 case ERR_NOT_ENOUGH_ENERGY:
                     if (constants.isDebugEnabled()) {
-                        console.log('not enough energy to spawn', roleSpawned);
+                        console.log('not enough energy to spawn', roleSpawned, '@', energyToSpend);
                     }
                     break;
                 case ERR_BUSY:
