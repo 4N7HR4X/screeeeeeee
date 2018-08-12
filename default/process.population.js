@@ -128,11 +128,6 @@ let populationProcessor = {
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
-        } else if (livingUpgradersAlpha < minimumUpgraderAlphaCount) {
-            roleSpawned = UPGRADER_ALPHA;
-            energyToSpend = energyCapacity;
-            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
-            name = this.spawnCreep(roleSpawned, energyToSpend);
         } else if (livingUpgradersBeta < minimumUpgraderBetaCount) {
             roleSpawned = UPGRADER_BETA;
             energyToSpend = energyCapacity;
@@ -161,6 +156,11 @@ let populationProcessor = {
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
+        } else if (livingUpgradersAlpha < minimumUpgraderAlphaCount) {
+            roleSpawned = UPGRADER_ALPHA;
+            energyToSpend = energyCapacity;
+            energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
+            name = this.spawnCreep(roleSpawned, energyToSpend);
         } else {
             //todo figure out which creep would be most useful to build
         }
