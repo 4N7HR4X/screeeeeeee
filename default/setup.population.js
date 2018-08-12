@@ -104,11 +104,11 @@ module.exports = {
             {
                 body: [WORK, WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 600
-            },
+            }/*,
             {
                 body: [WORK, WORK, WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 800
-            }
+            }*/
         ],
         count: 8,
         priority: 8,
