@@ -26,11 +26,6 @@ let populationProcessor = {
             console.log('linksExist:', linksExist);
         }
 
-        let roomNames = Game.rooms.filter((r) => Game.rooms[r].my);
-        for (let room of roomNames) {
-            console.log(room);
-        }
-
         let harvester = populationConfig.harvester;
         let builder = populationConfig.builder;
         let upgrader = populationConfig.upgrader;
