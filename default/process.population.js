@@ -82,7 +82,6 @@ let populationProcessor = {
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 }
             }
-
         } else if (livingUpgraders < minimumUpgraderCount) {
             roleSpawned = UPGRADER;
             energyToSpend = energyCapacity;
@@ -114,7 +113,11 @@ let populationProcessor = {
                     roleSpawned = BUILDER;
                     energyToSpend = 400;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
-                } else if (livingRepairers < 2 /*minimumRepairerCount - 1*/) {
+                } else if (livingRepairers < 1 /*minimumRepairerCount - 1*/) {
+                    roleSpawned = REPAIRER;
+                    energyToSpend = 400;
+                    name = this.spawnCreep(roleSpawned, energyToSpend);
+                } else if (livingUpgradersBeta < 4) {
                     roleSpawned = REPAIRER;
                     energyToSpend = 400;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
