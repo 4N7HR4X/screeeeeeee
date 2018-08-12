@@ -16,14 +16,14 @@ let towerControl = {
                 }
                 tower.attack(target);
             } else {
-                target = tower.pos.findClosestByRange(FIND_MY_STRUCTURES, {filter: (s) => (s.hits < s.hitsMax) && (tower.pos.getRangeTo(s) < 10)});
+                target = tower.pos.findClosestByRange(FIND_MY_STRUCTURES, {filter: (s) => (s.hits < s.hitsMax)/* && (tower.pos.getRangeTo(s) < 10)*/});
                 if (target !== null) {
                     if (config.isShowTowerDebugEnabled()) {
                         console.log('repairing structure');
                     }
                     tower.repair(target);
                 } else {
-                    target = tower.pos.findClosestByRange(FIND_MY_CREEPS, {filter: (s) => (s.hits < s.hitsMax) && (tower.pos.getRangeTo(s) < 10)});
+                    target = tower.pos.findClosestByRange(FIND_MY_CREEPS, {filter: (s) => (s.hits < s.hitsMax)/* && (tower.pos.getRangeTo(s) < 10)*/});
                     if (target !== null) {
                         if (config.isShowTowerDebugEnabled()) {
                             console.log('repairing creep');
