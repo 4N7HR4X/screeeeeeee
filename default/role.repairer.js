@@ -4,12 +4,16 @@ const builderRole = require('role.builder');
 
 const PATH_STYLE_TO_WORK = constants.PATH_STYLE_TO_WORK();
 
+// const REPAIR_WALLS = false;
+// const REPAIR_RAMPARTS = false;
 let roleRepairer = {
     role: 'repairer',
 
     repair: function (creep) {
         let structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-            filter: (s) => (s.hits < s.hitsMax) && (s.structureType !== STRUCTURE_WALL)
+            filter: (s) => (s.hits < s.hitsMax) &&
+                (s.structureType !== STRUCTURE_WALL) &&
+                (s.structureType !== STRUCTURE_RAMPART)
         });
         if (constants.isDebugEnabled()) {
             console.log('repairer:', structure);
