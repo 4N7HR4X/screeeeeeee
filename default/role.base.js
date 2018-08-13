@@ -4,7 +4,7 @@ const PATH_STYLE_TO_COLLECT = constants.PATH_STYLE_TO_COLLECT();
 const PATH_STYLE_TO_WORK = constants.PATH_STYLE_TO_WORK();
 
 const base = {
-    role:'default',
+    role: 'default',
     extractResource: function (creep) {
         let source = creep.pos.findClosestByPath(FIND_SOURCES);
         // let sources = creep.pos.findInRange(FIND_SOURCES, 10);
@@ -23,7 +23,7 @@ const base = {
         let target = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
             filter: (structure) => {
                 return (structure.structureType === STRUCTURE_SPAWN ||
-                    structure.structureType === STRUCTURE_LINK ||
+                    (structure.structureType === STRUCTURE_LINK && Game.creeps.length > 2) ||
                     structure.structureType === STRUCTURE_EXTENSION ||
                     structure.structureType === STRUCTURE_TOWER) &&
                     (structure.energy < structure.energyCapacity)
