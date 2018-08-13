@@ -52,9 +52,11 @@ let populationProcessor = {
 
         let roleSpawned = undefined;
         let energyToSpend = undefined;
+        let branch = undefined;
 
         if (livingHarvesters < minimumHarvesterCount) {
             // if we don't have at least the minimum harvesters, spawn one at current energy level
+            branch = HARVESTER;
             roleSpawned = HARVESTER;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
@@ -87,6 +89,7 @@ let populationProcessor = {
                 }
             }
         } /*else if (livingUpgraders < minimumUpgraderCount) {
+            branch = UPGRADER;
             roleSpawned = UPGRADER;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
@@ -108,6 +111,7 @@ let populationProcessor = {
                 }
             }
         }*/ else if (livingRepairers < minimumRepairerCount) {
+            branch = REPAIRER;
             roleSpawned = REPAIRER;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
@@ -128,11 +132,13 @@ let populationProcessor = {
                 }
             }
         } else if (livingPathFinders < minimumPathFinderCount) {
+            branch = PATHFINDER;
             roleSpawned = PATHFINDER;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
         } else if (livingUpgradersBeta < minimumUpgraderBetaCount) {
+            branch = UPGRADER_BETA;
             roleSpawned = UPGRADER_BETA;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
@@ -149,6 +155,7 @@ let populationProcessor = {
                 }
             }
         } else if (livingBuilders < minimumBuilderCount) {
+            branch = BUILDER;
             roleSpawned = BUILDER;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
@@ -161,12 +168,14 @@ let populationProcessor = {
                 }
             }
         } else if (livingUpgradersAlpha < minimumUpgraderAlphaCount) {
+            branch = UPGRADER_ALPHA;
             roleSpawned = UPGRADER_ALPHA;
             energyToSpend = energyCapacity;
             energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
             name = this.spawnCreep(roleSpawned, energyToSpend);
         } else {
             //todo figure out which creep would be most useful to build
+            branch = 'OTHER';
         }
         if (constants.isShowResourcesEnabled()) {
             console.log('|', energyAvailable, '/', energyCapacity, 'energy')
@@ -179,6 +188,9 @@ let populationProcessor = {
                 livingRepairers, '/', minimumRepairerCount, 'repairers'/*, '(' + (repairer.tiers.length - 1) + ')'*/, '\n|',
                 livingPathFinders, '/', minimumPathFinderCount, 'pathfinders'/*, '(' + (pathfinder.tiers.length - 1) + ')'*/, '\n|',
                 livingBuilders, '/', minimumBuilderCount, 'builders'/*, '(' + (builder.tiers.length - 1) + ')'*/);
+        }
+        if (constants.isShowPopulationEnabled()) {
+            console.log('spawn branch', branch);
         }
 
         if (!(name < 0)) {
@@ -195,7 +207,7 @@ let populationProcessor = {
             switch (name) {
                 case ERR_NOT_ENOUGH_ENERGY:
                     if (constants.isShowPopulationEnabled()) {
-                        console.log('next spawn:', roleSpawned, '@', energyToSpend);
+                        console.log('next spawn(branch:' + branch + '):', roleSpawned, '@', energyToSpend);
                     }
                     break;
                 case ERR_BUSY:
