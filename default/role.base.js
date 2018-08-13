@@ -22,8 +22,11 @@ const base = {
     depositResourceAtTarget: function (creep) {
         let target = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
             filter: (structure) => {
+                let length = Game.creeps.length;
+                let isLink = structure.structureType === STRUCTURE_LINK && length > 4;
+                console.log(length, isLink);
                 return (structure.structureType === STRUCTURE_SPAWN ||
-                    (structure.structureType === STRUCTURE_LINK && Game.creeps.length > 4) ||
+                    (isLink) ||
                     structure.structureType === STRUCTURE_EXTENSION ||
                     structure.structureType === STRUCTURE_TOWER) &&
                     (structure.energy < structure.energyCapacity)
