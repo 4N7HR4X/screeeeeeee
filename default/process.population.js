@@ -189,9 +189,6 @@ let populationProcessor = {
                 livingPathFinders, '/', minimumPathFinderCount, 'pathfinders'/*, '(' + (pathfinder.tiers.length - 1) + ')'*/, '\n|',
                 livingBuilders, '/', minimumBuilderCount, 'builders'/*, '(' + (builder.tiers.length - 1) + ')'*/);
         }
-        if (constants.isShowPopulationEnabled()) {
-            console.log('spawn branch', branch);
-        }
 
         if (!(name < 0)) {
             if (name === undefined) {
@@ -207,7 +204,7 @@ let populationProcessor = {
             switch (name) {
                 case ERR_NOT_ENOUGH_ENERGY:
                     if (constants.isShowPopulationEnabled()) {
-                        console.log('next spawn(branch:' + branch + '):', roleSpawned, '@', energyToSpend);
+                        console.log('next spawn(' + branch + '):', roleSpawned, '@', energyToSpend);
                     }
                     break;
                 case ERR_BUSY:
