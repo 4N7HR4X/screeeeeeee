@@ -60,3 +60,26 @@ tag upgrader as miner and upgrader as technician.
 
 
 make military.
+
+> Create initialization process. During init for room, determine location and utility of
+sources on first tick. how many creeps can use simultaneously? store results in memory. if
+memory populated, don't re-init.
+
+Example:
+    if (memory.roomCache[roomName].initialized === true) {
+        wait until 200 energy is available.
+        Build a [MOVE, MOVE, MOVE, MOVE] creep.
+        this is our pathfinder. he is the pioneer of the colony.
+        lay down all the construction sites for the roads from sources
+        layout rough energy array shape.
+        determine locations for towers, links and mark with flags at each location.
+        spawn builder, upgrader, harvester, repairer (all [WORK, MOVE, CARRY]) in that order.
+
+        once these 4 creeps are built, pathfinder suicides.
+        memory.roomCache[roomName].initialized = true;
+
+    }
+
+
+
+
