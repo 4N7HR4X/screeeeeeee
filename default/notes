@@ -13,9 +13,10 @@ Objectives:
      // The result of this will be used along with current population and minimum count to rank
      // all roles in order of most important to spawn next.
      let distanceFromMinimum = livingHarvesters - minHarvesters;
-
-     let harvesterRank = role.priority - (distanceFromMinimum * livingHarvesters / minHarvesters)
-
+     let harvesterRank = 0;
+     if (minHarvesters !== 0) {
+        harvesterRank = role.priority - (distanceFromMinimum * livingHarvesters / minHarvesters)
+     }
      // Highest priority wins!
 > 2) Size of creep matters. We need to think of a way to determine the optimal creep body to build
    given available energy and priority of creep spawning.
