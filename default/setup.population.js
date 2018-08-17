@@ -18,7 +18,7 @@ module.exports = {
                 cost: 800
             }
         ],
-        count: 2,
+        count: 3,
         priority: 10,
         tags: ['logistics', 'harvester']
     },'harvester.alpha': {
@@ -89,15 +89,15 @@ module.exports = {
                 cost: 400
             },
             {
-                body: [WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+                body: [MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 600
             },
             {
-                body: [WORK, WORK, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+                body: [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 800
             }
         ],
-        count: 2,
+        count: 3,
         priority: 8,
         tags: ['logistics', 'upgrader.alpha', 'miner']
     },
