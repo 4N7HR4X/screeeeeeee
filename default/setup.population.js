@@ -2,19 +2,19 @@ module.exports = {
     'harvester': {
         tiers: [
             {
-                body: [WORK, MOVE, CARRY],
+                body: [CARRY, MOVE, CARRY],
                 cost: 200
             },
             {
-                body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+                body: [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
                 cost: 400
             },
             {
-                body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
+                body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
                 cost: 600
             },
             {
-                body: [WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
+                body: [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 800
             }
         ],
@@ -120,7 +120,7 @@ module.exports = {
                 cost: 800
             }*/
         ],
-        count: 8,
+        count: 4,
         priority: 8,
         tags: ['logistics', 'upgrader.beta', 'technician']
     },
