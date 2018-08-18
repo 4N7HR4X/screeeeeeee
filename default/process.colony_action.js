@@ -1,6 +1,7 @@
 let colony = {
     run: function () {
-        for (let name in Game.creeps) {
+        let civilianCreeps = Game.creeps.filter((name) => Game.creeps[name].memory.military_unit === false);
+        for (let name in civilianCreeps) {
             let creep = Game.creeps[name];
             creep.performAction();
         }
