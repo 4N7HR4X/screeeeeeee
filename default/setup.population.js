@@ -187,6 +187,9 @@ module.exports = {
                 break;
             }
         }
+        if (returnedTier === null) {
+            returnedTier = this[role].tiers[0];
+        }
         return returnedTier;
     },
 
