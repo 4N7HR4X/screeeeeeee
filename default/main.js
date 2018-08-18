@@ -1,4 +1,5 @@
 require('prototype.spawn')();
+require('prototype.creep')();
 
 let populationControl = require('process.population');
 let colonyActionControl = require('process.colony_action');

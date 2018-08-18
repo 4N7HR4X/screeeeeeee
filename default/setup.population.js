@@ -27,7 +27,8 @@ module.exports = {
         ],
         count: 1,
         priority: 10,
-        tags: ['logistics', 'harvester', 'tower']
+        tags: ['logistics', 'harvester', 'tower'],
+        action: require('role.harvester.alpha')
     },
     'builder': {
         tiers: [
@@ -50,7 +51,8 @@ module.exports = {
         ],
         count: 3,
         priority: 6,
-        tags: ['logistics', 'builder']
+        tags: ['logistics', 'builder'],
+        action: require('role.builder')
     },
     'upgrader': {
         tiers: [
@@ -73,7 +75,8 @@ module.exports = {
         ],
         count: 0,
         priority: 8,
-        tags: ['logistics', 'upgrader']
+        tags: ['logistics', 'upgrader'],
+        action: require('role.upgrader')
     },
     'upgrader.alpha': {
         tiers: [
@@ -96,7 +99,8 @@ module.exports = {
         ],
         count: 3,
         priority: 8,
-        tags: ['logistics', 'upgrader.alpha', 'miner']
+        tags: ['logistics', 'upgrader.alpha', 'miner'],
+        action: require('role.upgrader.alpha')
     },
     'upgrader.beta': {
         tiers: [
@@ -119,7 +123,8 @@ module.exports = {
         ],
         count: 4,
         priority: 8,
-        tags: ['logistics', 'upgrader.beta', 'technician']
+        tags: ['logistics', 'upgrader.beta', 'technician'],
+        action: require('role.upgrader.beta')
     },
     'pathfinder': {
         tiers: [
@@ -142,7 +147,8 @@ module.exports = {
         ],
         count: 0,
         priority: 0,
-        tags: ['logistics', 'pathfinder']
+        tags: ['logistics', 'pathfinder'],
+        action: require('role.pathfinder')
     },
     'repairer': {
         tiers: [
@@ -165,7 +171,8 @@ module.exports = {
         ],
         count: 3,
         priority: 3,
-        tags: ['logistics', 'repairer']
+        tags: ['logistics', 'repairer'],
+        action: require('role.repairer')
     },
 
     getTierToSpawn: function (role, energy) {
