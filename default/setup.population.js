@@ -2,7 +2,7 @@ module.exports = {
     'harvester': {
         tiers: [
             {
-                body: [WORK, CARRY, CARRY],
+                body: [WORK, MOVE, CARRY],
                 cost: 200
             },
             {
