@@ -77,6 +77,7 @@ let populationProcessor = {
                 } else if (livingBuilders < 1) {
                     roleSpawned = BUILDER;
                     energyToSpend = energyAvailable;
+                    energyToSpend = populationConfig.getTierToSpawn(roleSpawned, energyToSpend).cost;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingUpgradersBeta < 2) {
                     roleSpawned = UPGRADER_BETA;
