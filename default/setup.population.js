@@ -16,7 +16,8 @@ module.exports = {
         ],
         count: 3,
         priority: 10,
-        tags: ['logistics', 'harvester']
+        tags: ['logistics', 'harvester'],
+        action: require('role.harvester')
     },
     'harvester.alpha': {
         tiers: [
