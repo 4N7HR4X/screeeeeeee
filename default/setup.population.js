@@ -2,26 +2,23 @@ module.exports = {
     'harvester': {
         tiers: [
             {
-                body: [CARRY, MOVE, CARRY],
+                body: [WORK, CARRY, CARRY],
                 cost: 200
             },
             {
-                body: [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY],
-                cost: 400
+                body: [WORK, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+                cost: 500
             },
             {
-                body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY],
-                cost: 600
-            },
-            {
-                body: [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
-                cost: 800
+                body: [WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+                cost: 750
             }
         ],
-        count: 3,
+        count: 2,
         priority: 10,
         tags: ['logistics', 'harvester']
-    },'harvester.alpha': {
+    },
+    'harvester.alpha': {
         tiers: [
             {
                 body: [WORK, MOVE, CARRY],
@@ -89,11 +86,11 @@ module.exports = {
                 cost: 400
             },
             {
-                body: [MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+                body: [WORK, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 600
             },
             {
-                body: [MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+                body: [WORK, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
                 cost: 800
             }
         ],
