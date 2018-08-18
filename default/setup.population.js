@@ -14,7 +14,7 @@ module.exports = {
                 cost: 750
             }
         ],
-        count: 2,
+        count: 3,
         priority: 10,
         tags: ['logistics', 'harvester']
     },

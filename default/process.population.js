@@ -146,7 +146,7 @@ let populationProcessor = {
             if (name === ERR_NOT_ENOUGH_ENERGY) {
                 if (livingBuilders < 2) {
                     roleSpawned = BUILDER;
-                    energyToSpend = 400;
+                    energyToSpend = 500;
                     name = this.spawnCreep(roleSpawned, energyToSpend);
                 } else if (livingRepairers < 2) {
                     roleSpawned = REPAIRER;
